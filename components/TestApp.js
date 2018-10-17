@@ -1,36 +1,47 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchData } from "../actions";
+import LiContainer  from "../containers/LiContainer";
 
 
 const mapStateToProps = (state) => {
     return {
         arrayOfArticles: state.arrayOfArticles,
+        error: state.error,
     }
 };
 
-class TestApp extends React.Component { // Component
+class TestApp extends React.Component {
 
     componentDidMount () {
         this.props.dispatch(fetchData());
     }
-
+    handleRefreshButton () {
+        this.props.dispatch(fetchData());
+    }
     render () {
-        console.error("action-props", this.props);
-
-        const listItems = this.props.arrayOfArticles.map((item, index) => {
+        if (this.props.error !== null) {
+            return (<div> {this.props.error.message} </div> )
+        } else {
             return (
-                <li key={index}>
-                    {item.webTitle}
-                </li>
+                <div>
+                    <div className="header">
+                        <h1>The Guardian News</h1>
+                        <button onClick={this.handleRefreshButton.bind(this)}>Refresh</button>
+                    </div>
+                    <div>
+                        <ul className="list">
+                            { this.props.arrayOfArticles.map((item, index) => {
+                                return <LiContainer
+                                    item = {item}
+                                    index={index}
+                                />
+                            })}
+                        </ul>
+                    </div>
+                </div>
             );
-        });
-        return (
-            <div>
-                <h1>The Guardian News</h1>
-                <ul>{listItems}</ul>
-            </div>
-        )
+        }
     }
 }
 

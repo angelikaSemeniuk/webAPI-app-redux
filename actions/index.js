@@ -8,6 +8,7 @@ export function fetchData() {
             .then(
                 (data) => {
                     dispatch({type: "RECEIVE_ARTICLES", value: data.response.results});
+                    dispatch({type: "ATTRIBUTE_FOR_ITEMS" });
                 },
                 (error) => {
                     dispatch({type: "CATCH_ERROR", value: error});
