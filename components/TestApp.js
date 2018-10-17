@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchData } from "../actions";
 import LiContainer  from "../containers/LiContainer";
+import PaginationContainer from "../containers/PaginationContainer";
 
 
 const mapStateToProps = (state) => {
@@ -38,6 +39,9 @@ class TestApp extends React.Component {
                                 />
                             })}
                         </ul>
+                    </div>
+                    <div>
+                        <PaginationContainer/>
                     </div>
                 </div>
             );

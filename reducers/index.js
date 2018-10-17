@@ -1,4 +1,4 @@
-const initialState = { arrayOfArticles: [], error: null, fetching: false, articleInfo: "", webUrl: null, fetchingInfo: false }
+const initialState = { arrayOfArticles: [], error: null, fetching: false, articleInfo: "", webUrl: null, fetchingInfo: false, currentPage: null, totalPages: null }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -10,6 +10,16 @@ const reducer = (state = initialState, action) => {
         case "RECEIVE_ARTICLES" : {
             return state = Object.assign({}, state, {
                 arrayOfArticles: action.value,
+            })
+        }
+        case "RECEIVE_CURRENT_PAGE" : {
+            return state = Object.assign({}, state, {
+                currentPage: action.value,
+            })
+        }
+        case "RECEIVE_TOTAL_PAGE" : {
+            return state = Object.assign({}, state, {
+                totalPages: action.value,
             })
         }
         case "ATTRIBUTE_FOR_ITEMS" : {

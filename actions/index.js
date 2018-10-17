@@ -8,6 +8,8 @@ export function fetchData() {
             .then(
                 (data) => {
                     dispatch({type: "RECEIVE_ARTICLES", value: data.response.results});
+                    dispatch({type: "RECEIVE_CURRENT_PAGE", value: data.response.currentPage});
+                    dispatch({type: "RECEIVE_TOTAL_PAGE", value: data.response.total});
                     dispatch({type: "ATTRIBUTE_FOR_ITEMS" });
                 },
                 (error) => {

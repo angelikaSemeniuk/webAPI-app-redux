@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-const LiContainer = (props) => {
+const liContainer = (props) => {
 
         return (
             <div>
@@ -50,4 +50,4 @@ const LiContainer = (props) => {
     }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(LiContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(liContainer);
