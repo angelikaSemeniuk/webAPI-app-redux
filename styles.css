@@ -1,0 +1,86 @@
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header button {
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 2px 5px grey;
+}
+
+.list {
+    display: flex;
+    margin: 0 150px;
+    padding: 50px 100px;
+    flex-direction: column;
+    list-style: none;
+}
+
+.messageError {
+    display: none;
+    font-size: 30px;
+    text-align: center;
+    color: firebrick;
+}
+
+.list li {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.accordion-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.accordion-header i {
+    padding: 10px;
+}
+
+.panel {
+    background: none;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pagination span {
+    margin: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.pagination p {
+    margin: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.pagination button {
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 2px 5px grey;
+}
+
+
+
+
+
+
+
+
+
